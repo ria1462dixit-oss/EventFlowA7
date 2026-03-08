@@ -1,0 +1,421 @@
+/* hamburger button - hidden on desktop, shown on mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background-color: #1a1a2e;
+  border-radius: 999px;
+}
+
+/* sidebar overlay backdrop - hidden on desktop */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 98;
+}
+
+
+@media (max-width: 768px) {
+
+  /* ─────────────────────────────────────
+     LANDING PAGE
+  ───────────────────────────────────── */
+
+  .nav {
+    padding: 16px 20px;
+  }
+
+  .nav-scrolled {
+    padding: 12px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 100px 20px 60px;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .hero-btns {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+
+  .image-card {
+    width: 100%;
+    height: 220px;
+  }
+
+  .verified-badge {
+    left: 10px;
+    bottom: -14px;
+    min-width: unset;
+    max-width: 92%;
+  }
+
+  .features-section {
+    padding: 60px 20px;
+  }
+
+  .features-inner .section-title {
+    font-size: 26px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  /* ─────────────────────────────────────
+     LOGIN PAGE
+  ───────────────────────────────────── */
+
+  .login-page {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    padding: 40px 20px;
+    width: 100%;
+  }
+
+  .glass-card {
+    padding: 32px 22px;
+    max-width: 100%;
+  }
+
+  .role-row {
+    flex-wrap: wrap;
+  }
+
+  /* ─────────────────────────────────────
+     SIGNUP PAGE
+  ───────────────────────────────────── */
+
+  .signup-logo-wrap {
+    left: 20px;
+    top: 20px;
+    font-size: 20px;
+  }
+
+  .signup-glass-card {
+    padding: 32px 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ─────────────────────────────────────
+     ATTENDEE DASHBOARD (className-based)
+  ───────────────────────────────────── */
+
+  .page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .main {
+    padding: 20px 16px;
+    width: 100%;
+  }
+
+  .top-bar {
+    margin-bottom: 20px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .page-subtitle {
+    font-size: 12px;
+  }
+
+  .tickets-row {
+    flex-direction: column;
+  }
+
+  .ticket-card {
+    width: 100%;
+  }
+
+  .empty-ticket {
+    width: 100%;
+  }
+
+  .explore-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .filter-row {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .modal-card {
+    padding: 28px 18px;
+    border-radius: 20px;
+    margin: 12px;
+    max-height: 92vh;
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
+
+  .modal-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .toast {
+    max-width: 88%;
+    white-space: normal;
+    text-align: center;
+    bottom: 16px;
+    font-size: 13px;
+    padding: 12px 18px;
+  }
+
+  .ai-float-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  /* ─────────────────────────────────────
+     ADMIN & VOLUNTEER DASHBOARDS
+     (className-based after conversion)
+  ───────────────────────────────────── */
+
+  .dash-page {
+    flex-direction: column !important;
+  }
+
+  .dash-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100vh !important;
+    width: 220px !important;
+    z-index: 99 !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.28s ease !important;
+    flex-shrink: 0 !important;
+  }
+
+  .dash-sidebar.open {
+    transform: translateX(0) !important;
+  }
+
+  .dash-main {
+    padding: 20px 16px !important;
+    width: 100% !important;
+  }
+
+  .dash-top-bar {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .dash-page-title {
+    font-size: 20px !important;
+  }
+
+  .dash-page-subtitle {
+    font-size: 12px !important;
+  }
+
+  .dash-stats-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .dash-info-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .dash-chart-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .dash-actions-row {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .dash-topbar-right {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .dash-table {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+
+  .dash-toast {
+    max-width: 88% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    bottom: 16px !important;
+    font-size: 13px !important;
+    padding: 12px 18px !important;
+  }
+
+  .dash-scanner-box {
+    height: 240px !important;
+  }
+
+  .dash-btn-row {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .dash-primary-btn,
+  .dash-secondary-btn,
+  .dash-create-btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .dash-search-input {
+    width: 100% !important;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 11px 16px;
+    font-size: 13px;
+  }
+
+  .glass-card {
+    padding: 24px 16px;
+  }
+
+  .signup-glass-card {
+    padding: 24px 16px;
+  }
+
+  .dash-stats-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dash-info-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dash-page-title {
+    font-size: 18px !important;
+  }
+
+  .dash-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 13px !important;
+  }
+}
