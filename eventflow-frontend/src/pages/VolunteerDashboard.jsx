@@ -30,7 +30,7 @@ export default function VolunteerDashboard() {
 
   const fetchAttendance = async (eventName) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/volunteer/attendance/${encodeURIComponent(eventName)}`, {
+      const res = await fetch(`https://eventflowa7.onrender.com/api/volunteer/attendance/${encodeURIComponent(eventName)}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -43,7 +43,7 @@ export default function VolunteerDashboard() {
   const markAttendance = async (name, email) => {
     try {
       const currentVolunteer = volunteerRef.current;
-      const res = await fetch("http://localhost:5000/api/volunteer/mark-attendance", {
+      const res = await fetch("https://eventflowa7.onrender.com/api/volunteer/mark-attendance", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ attendeeName: name, attendeeEmail: email, eventName: currentVolunteer?.assignedEvent }),
@@ -61,7 +61,7 @@ export default function VolunteerDashboard() {
 
   const fetchVolunteerData = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/volunteer/me", {
+      const res = await fetch("https://eventflowa7.onrender.com/api/volunteer/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

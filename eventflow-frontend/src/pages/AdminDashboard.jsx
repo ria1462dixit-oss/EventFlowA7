@@ -171,7 +171,7 @@ function VolunteersTab({ events, showToast }) {
   const fetchVolunteers = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/volunteer/pending", {
+      const res = await fetch("https://eventflowa7.onrender.com/api/volunteer/pending", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -186,7 +186,7 @@ function VolunteersTab({ events, showToast }) {
     if (!eventName) { showToast("Please select an event first"); return; }
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/volunteer/approve/${volunteerId}`, {
+      const res = await fetch(`https://eventflowa7.onrender.com/api/volunteer/approve/${volunteerId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ assignedEvent: eventName }),
@@ -303,8 +303,8 @@ export default function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       const [volRes, attRes] = await Promise.all([
-        fetch("http://localhost:5000/api/volunteer/pending", { headers: { Authorization: `Bearer ${token}` } }),
-        fetch("http://localhost:5000/api/volunteer/attendance/all", { headers: { Authorization: `Bearer ${token}` } }),
+        fetch("https://eventflowa7.onrender.com/api/volunteer/pending", { headers: { Authorization: `Bearer ${token}` } }),
+        fetch("https://eventflowa7.onrender.com/api/volunteer/attendance/all", { headers: { Authorization: `Bearer ${token}` } }),
       ]);
       const volunteers = await volRes.json();
       const attendance = attRes.ok ? await attRes.json() : [];
@@ -371,7 +371,7 @@ export default function AdminDashboard() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/users/setup-admin", {
+      const res = await fetch("https://eventflowa7.onrender.com/api/users/setup-admin", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ ...adminForm, setupKey: "admin_master_key" }),
